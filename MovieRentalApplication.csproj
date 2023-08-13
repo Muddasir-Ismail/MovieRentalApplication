@@ -149,6 +149,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginDbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\signup.cs">
+      <DependentUpon>LoginDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +221,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Login\Signup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

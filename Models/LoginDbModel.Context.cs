@@ -26,5 +26,6 @@ namespace MovieRentalApplication.Models
         }
     
         public virtual DbSet<login> logins { get; set; }
+        public virtual DbSet<signup> signups { get; set; }
     }
 }

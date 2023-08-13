@@ -5,7 +5,7 @@
 }
 
 <h2>Login Form </h2>
-@Html.Raw(TempData["LoginSuccessMessage"])
+@Html.Raw(TempData["LoginMessage"])
 @using (Html.BeginForm("Index", "Login", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
@@ -41,5 +41,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Signup", "Signup")
 </div>

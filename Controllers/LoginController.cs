@@ -51,7 +51,7 @@ namespace MovieRentalApplication.Controllers
                 var credientials = db.logins.Where(model => model.username == s.username && model.password == s.password).FirstOrDefault();
                 if (credientials != null)
                 {
-                    // Session["UserId"] = s.id.ToString();
+                    Session["UserId"] = s.id.ToString();
                     Session["Username"] = s.username.ToString();
                     TempData["LoginMessage"] = "<script>alert('Login successfully!')</script>";
                     return RedirectToAction("Index", "Dashboard");
@@ -59,6 +59,30 @@ namespace MovieRentalApplication.Controllers
                 else
                 {
                     TempData["LoginMessage"] = "<script>alert('Login failed!')</script>";
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Signup(signup s)
+        {
+            if (ModelState.IsValid == true)
+            {
+                db.signups.Add(s);
+                int a = db.SaveChanges();
+                if (a > 0)
+                {
+                    ViewBag.InsertMessage = "<script>alert('Registered successfully!')</script>";
+                    ModelState.Clear();
+                }
+                else
+                {
+                    ViewBag.InsertMessage = "<script>alert('Registrition Failed!')</script>";
                 }
             }
             return View();

@@ -20,11 +20,10 @@ namespace MovieRentalApplication.Models
         [DisplayName("Username")]
         [Required(ErrorMessage = "Username is not null")]
         public string username { get; set; }
-        [DisplayName("Password")]
         [Required(ErrorMessage = "Password is not null")]
         [DataType(DataType.Password)]
         public string password { get; set; }
         [DisplayName("Remember me")]
-        public bool remember_me { get; set; }
+        public bool remember_me { get; set; }   
     }
 }
